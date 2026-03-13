@@ -4,7 +4,7 @@
 
 Released 7:43 PM CST   Thursday   12 Mar 2026
 
-Programmed by Liam Minich
+Programmed by LiamsWebsites
 
 
 
@@ -39,8 +39,3 @@ Programmed by Liam Minich
 * Checkbox to export files from Textarea rather than storage Save
 * Checkbox to automatically transfer time to memory upon time modification
 * Draggable balloon and basketball PNGs
-
-
-
-Anybody with this product has premission from Liam Minich to sell or distribute this product in any way, shape, or form as long as Liam Minich is given credit for the programming.
-
