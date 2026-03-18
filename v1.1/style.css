@@ -1,0 +1,552 @@
+#error {
+    display: none;
+    background-color: rgb(206, 82, 82);
+    color: white;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    inset: 0;
+}
+
+#errorButton {
+    width: auto;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 8000;
+    transition: background-color 0.4s;
+}
+
+#brightnessOverlay {
+    background-color: rgb(0,0,0);
+    opacity: 0.0;
+    z-index: 9990;
+    pointer-events: none;
+}
+
+#keyReminder {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    color: white;
+}
+
+#textDiv, .fontDiv {
+    display: flex;
+}
+
+#textDiv {
+    gap: 25px;
+    flex-direction: row;
+    align-items: top;
+}
+
+.fontDiv {
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+}
+
+.fontSelect {
+    height: 25px;
+    width: auto;
+}
+
+.coverAll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    inset: 0;
+}
+
+#fontPreview {
+    font-family: monospace;
+    font-weight: 400;
+    font-size: 10pt;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    height: 50px;
+    width: 90%
+}
+
+#previewFont {
+    display: flex;
+    flex-direction: column;
+}
+
+#startContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 90vh;
+    flex-direction: column;
+}
+
+#usernameDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 25%;
+    width: 100vw;
+    gap: 10px;
+}
+
+#username {
+    width: 600px;
+    height: 45px;
+}
+
+#userExplain {
+    position: absolute;
+    top: 15%;
+    left: 28.2%;
+}
+
+#startButton {
+    width: 100px;
+    height: 60px;
+    border-radius: 9px;
+    border-color: lightgray;
+    font-family:'Courier New', Courier, monospace
+}
+
+#startButton:hover {
+    background-color: rgb(218, 217, 217);
+}
+
+#transportButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+}
+
+#startButton:active {
+    width: 90px;
+    height: 54px;
+}
+
+#desc {
+    font-size: 16pt;
+}
+
+.draggable {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+}
+
+#avgDisplay {
+    display: flex;
+    flex-direction: row;
+    gap: none;
+    align-items: center;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.file {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 1px;
+    border-width: 1.5px;
+}
+
+.file:hover {
+    background-color:rgb(218, 217, 217);
+}
+
+.button {
+    border-radius: 8px;
+    font-size: 14px;
+    border-color: red;
+    border: solid;
+    border-width: 1px;
+}
+
+.button:hover {
+    background-color:rgb(218, 217, 217);
+}
+
+.labe {
+    margin-top: 5px;
+    font-family: Arial;
+}
+
+.checky {
+    width: auto;
+    height: auto;
+}
+
+#clearText {
+    background-color: black;
+    color: white;
+}
+
+#modBox {
+    font-size: 10pt;
+    width: 35%;
+    height: 74vh;
+    border-radius: 8px;
+    resize: none;
+    overflow: auto;
+    text-decoration: none;
+}
+
+.transp {
+    height: 53px;
+}
+
+#viewVers {
+    margin-top: 1px;
+    width: 110px;
+}
+
+#viewVers:hover {
+    width: 140px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+#balloonControls {
+    display: flex;
+    gap: 10px;
+}
+
+#bedballControls {
+    display: flex;
+    gap: 10px;
+}
+
+#balloonContainer {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+#bedBallContainer {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+
+#modContainer {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    margin-top: 11px;
+}
+
+#modButtons {
+    display: flex;
+    gap: 10px;
+}
+
+#modButtons button {
+    border: default;
+}
+
+#fileName {
+    height: 20px;
+}
+
+#nameText {
+    font-size: 8.5pt;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+#deleteUser {
+    height: 45px;
+    width: 45px;
+}
+
+#deleteUser:hover {
+    cursor: pointer;
+}
+
+#trashUserDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+#usernameSwitch {
+    height: 25px;
+}
+
+#fileNameContainer {
+    display: flex;
+    gap: 6px;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#fileButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+#fileContainer {
+    display: flex;
+    gap: 4px;
+}
+
+#check {
+    margin-left: 5px;
+}
+
+#verif {
+    margin-left: 5px;
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+    right: 45px;
+    gap: 55px;
+}
+
+#undoButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+#undoSave, #undoMem {
+    width: 90px;
+}
+
+#linebreak {
+    border: none;
+    height: 4px;
+    background-color: black;
+    width: 100%;
+}
+
+.displayChild {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+#balloon {
+    height: 65px;
+    width: 65px;
+    left: 150px;
+    transition: transform 0.2s;
+}
+
+#bask {
+    height: 65px;
+    width: 56px;
+    transition: transform 0.2s;
+    left: 100px;
+}
+
+#balloon:hover {
+    transform: rotate(-35deg);
+}
+
+#bask:hover {
+    transform: rotate(-35deg);
+}
+
+#settings {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0px;
+    transition: transform 0.2s;
+}
+
+#settingsOverlay {
+    position: fixed;
+    display: none;
+    inset: 0;
+}
+
+#settingsUi {
+    position: fixed;
+    display: flex;
+    visibility: hidden;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    width: 120vh;
+    height: 45vw;
+    background-color: white;
+    border-radius: 12px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+    cursor: default;
+    flex-direction: row;
+}
+
+#settings:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 1;
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+#close {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: 3px;
+    top: 3px;
+    transition: transform 0.1s;
+}
+
+#close:hover {
+    transform: rotate(-180deg);
+    cursor: pointer;
+}
+
+#tab {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    height: 100%;
+    background-color: darkgray;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: rgb(17, 17, 17);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.settingsButton {
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    width: 100%;
+    height: 10%;
+    background-color:rgb(153,150,150);
+}
+
+#soundMixerButton {
+    background-color: rgb(202, 227, 228);
+    border-top-left-radius: 8px;
+}
+
+.settingsDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow-y: auto;
+    min-width: 0;
+    gap: 4px;
+}
+
+.settingsDiv > * {
+    margin-left: 7px;
+}
+
+#fontSizeInput {
+    width: 60px;
+}
+
+#fontSizeP {
+    width: 100px;
+}
+
+#brightnessDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+#divUsername {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+}
+
+#displayCheckDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+}
+
+.volumeSort {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+}
+
+.percent {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 40px;
+}
+
+.volume:hover {
+    cursor: pointer;
+}
+
+.mute {
+    width: 21px;
+    height: 21px;
+}
+
+.dragLabel {
+    width: 200px;
+}
+
+#bigMute {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+.volumeSort:hover {
+    cursor: pointer;
+}
+
+#bigMute {
+    margin-top: 10px;
+}
+
+#allMute {
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+}
+
+#allMute:hover {
+    cursor: pointer;
+}
