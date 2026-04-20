@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Recorder v1.1.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <div id="brightnessOverlay" class="coverAll">
+        <h2 id="keyReminder" style="visibility: hidden">Press R to revert brightnes to 100%</h2>
+    </div>
+    <div id="error" class="coverAll">
+        <h4>It has been detected that your screen width is less than 1244 pixels. This is highly unrecommended as this can cause instability. Do you wish to proceed?</h4>
+        <label>
+            <input id="errorCheck" type="checkbox" class="labe">
+            Please do not ask me again
+        </label>
+        <button id="errorButton">I understand and wish to proceed</button>
+    </div>
+    <div id="overlay" class="coverAll">
+        <p id="desc">This website provides tons of customazibility over time data. Using these tools, you are able to keep track of times in seconds. For example, to keep track of running times in seconds, enter them into this program, and you will have a lot of options to keep track of this data.</p>
+        <div id="startContainer">
+            <h1 id="title">Welcome to Time Recorder v1.1.1</h1>
+            <button id="startButton">Click to Start</button>
+        </div>
+        <div id="usernameDiv">
+            <input id="username" type="text" placeholder="Type Username Here" autocomplete="none">
+            <select id="selectUsername">
+                <option id="usernamevalselect" value="">Or choose from an already existing one</option>
+            </select>
+        </div>
+    </div>
+    <img src="images/settings.png" id="settings" class="specialButton">
+    <div id="balloonContainer">
+        <div id="titleContainer" class="title">
+            <h2 id="balloonTitle">Balloonsmack</h2>
+            <img src="images/pngimg.com - balloon_PNG596.png" class="draggable" id="balloon" data-target="draggableBalloon">
+        </div>
+        <div id="balloonControls">
+            <input id="balloonInput" type="number" min="0" step="0.001">
+            <select id="balloonDropdown">
+                <option value="anyHitNoSurface">Any Hit No Surface</option>
+                <option value="anyHitNoGround">Any Hit No Ground</option>
+                <option value="handsOnlyNoGround">Hands Only No Ground</option>
+                <option value="handsOnlyNoSurface">Hands Only No Surface</option>
+                <option value="feetOnlyNoGround">Feet Only No Ground</option>
+                <option value="anyHitStrikeFloor">Any Hit Strike Floor</option>
+            </select>
+            <button id="balloonSave" class="button">Save Time</button>
+            <button id="memBalloonsmack" class="button">Save Memory</button>
+            <button id="viewBalloonTime" class="button">View Balloonsmack Times</button>
+            <button id="balloonTime" class="button">Clear Times</button>
+            <button id="balloonMem" class="button">Clear Memory</button>
+        </div>
+    </div>
+    <div id="bedBallContainer">
+        <div id="bedtitle" class="title">
+            <h2 id="bedBallTitle">Bedball</h2>
+            <img src="images/output-onlinepngtools (6).png" class="draggable" id="bask" data-target="draggableBask">
+        </div>
+        <div id="bedballControls">
+            <input id="bedballInput" type="number" min="0" step="0.001">
+            <select id="bedBallDropdown">
+                <option value="anyHitNoBed">Any Hit No Bed</option>
+                <option value="handsOnlyNoBed">Hands Only No Bed</option>
+                <option value="anyHitNoSurface">Any Hit No Surface</option>
+            </select>
+            <button id="bedBallSave" class="button">Save Time</button>
+            <button id="memBedBall" class="button">Save Memory</button>
+            <button id="viewBallTime" class="button ">View Bedball Times</button>
+            <button id="timeClear" class="button">Clear Times</button>
+            <button id="memClear" class="button">Clear Memory</button>
+        </div>
+    </div>
+    <div id="modContainer">
+        <div id="modButtons">
+            <button id="manageTime">Manage Time</button>
+            <button id="manageMemory">Manage Memory</button>
+            <button id="saveTime">Save Time</button>
+            <button id="saveMemory">Save Memory</button>
+            <button id="allTime">Clear All Times</button>
+            <button id="allMem">Clear All Memory</button>
+        </div>
+        <div id="fileContainer">
+            <textarea id="modBox" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off" rows="200" cols="100"></textarea>
+            <div id="fileButtons">
+                <button id="clearText" class="file">Clear Text</button>
+                <button id="uploadMem" class="file">Upload Memory</button>
+                <button id="uploadTime" class="file">Upload Times</button>
+                <button id="exportFile" class="file">Export Memory</button>
+                <button id="exportTime" class="file">Export Times</button>
+                <div id="transportButtons">
+                    <button id="transport" class="file transp">Transport Times to Memory</button>
+                    <button id="transportReverse" class="file transp">Transport Memory to Times</button>
+                </div>
+                <button id="clearError" class="file">Clear Error Logs</button>
+                <div id="fileNameContainer">
+                    <input id="fileName" type="text">
+                    <p id="nameText">File Name (Do not type format)</p>
+                </div>
+                <select id="viewVers">
+                    <option value="json">JSON format</option>
+                    <option value="text">Readable Text</option>
+                </select>
+                <label id="src" class="labe">
+                    <input id="verif" class="checky" type="checkbox">
+                    Export Files from ModBox
+                </label>
+                <label id="labe" class="labe">
+                    <input id="check" class="checky" type="checkbox">
+                    ModBox Automatically Updates from Data Changes
+                </label>
+                <label id="editLabel" class="labe">
+                    <input id="editable" class="checky" type="checkbox">
+                    ModBox is Editable
+                </label>
+                <label id="autoLabel" class="labe">
+                    <input id="auto" class="checky" type="checkbox">
+                    Time Automatically Updates to Memory
+                </label>
+                <h4 id="errorLog">Errors:</h4>
+                <h4 id="insertError"></h4>
+            </div>
+        </div>
+    </div>
+    <div id="display">
+        <div id="balloonDisplay" class="displayChild">
+            <button id="viewBalloonTime2" class="button">View Balloonsmack Memory Saves</button>
+            <h1 id="balloonsmackDisp">Balloonsmack Times</h1>
+            <h4 id="balloonPb">Balloonsmack PB: </h4>
+            <h4 id="balloonAvg">Balloonsmack Average: </h4>
+            <div class="avgDisplay">
+                <p>Average of:</p>
+                <input type="number" id="balloonAvgAmount">
+            </div>
+        </div>
+        <hr id="linebreak">
+        <div id="bedballDisplay" class="displayChild">
+            <button id="viewBallTime2" class="button">View Bedball Memory Saves</button>
+            <h1 id="bedballDisp">Bedball Times</h1>
+            <h4 id="bedballPb">Bedball PB: </h4>
+            <h4 id="bedballAvg">Bedball Average: </h4>
+            <div class="avgDisplay">
+                <p>Average of:</p>
+                <input type="number" id="bedballAvgAmount">
+            </div>
+        </div>
+        <div id="undoButtons">
+            <button id="undoSave">Undo Last Time Save</button>
+            <button id="undoMem">Undo Last Memory Save</button>
+        </div>
+    </div>
+    <div id="settingsOverlay">
+        <div id="settingsUi">
+            <img src="images/close.png" id="close" class="specialButton">
+            <div id="tab">
+                <button class="settingsButton" id="soundMixerButton" data-target="soundMixer">Sound Mixer</button>
+                <button class="settingsButton" id="displayOptionsButton" data-target="displayMixer">Display Options</button>
+                <button class="settingsButton" id="dangerZoneButton" data-target="dangerZone">Danger Zone</button>
+            </div>
+            <div id="soundMixer" class="settingsDiv">
+                <div id="logoVolumeDesc" class="volumeSort">
+                    <img src="images/Mute_Icon.svg" id="muteLogo" class="mute">
+                    <input type="range" id="logoVolume" class="volume">
+                    <p id="logoPercent" class="percent">100%</p>
+                    <p style="margin-left: 20px;" class="settText">Interactive Logo Volume</p>
+                </div>
+                <div id="buttonVolumeDesc" class="volumeSort">
+                    <img src="images/Mute_Icon.svg" id="muteButton" class="mute">
+                    <input type="range" id="buttonVolume" class="volume">
+                    <p id="buttonPercent" class="percent">100%</p>
+                    <p style="margin-left: 20px;" class="settText">Button Volume</p>
+                </div>
+                <div id="systemVolumeDesc" class="volumeSort">
+                    <img src="images/Mute_Icon.svg" id="muteSystem" class="mute">
+                    <input type="range" id="systemVolume" class="volume">
+                    <p id="systemPercent" class="percent">100%</p>
+                    <p style="margin-left: 20px;" class="settText">System Sounds Volume</p>
+                </div>
+                <div id="bigMute">
+                    <img src="images/allMute.png" id="allMute">
+                    <button id="resetVolFull" class="button">Reset all to 100%</button>
+                </div>
+            </div>
+            <div id="displayMixer" class="settingsDiv">
+                <div id="brightnessDiv">
+                    <input type="range" id="brightness" class="volume">
+                    <p id="brightPercent" class="percent">100%</p>
+                    <p style="margin-left: 20px;" class="settText">Brightness</p>
+                </div>
+                <div id="displayCheckDiv">
+                    <label id="dragBalloonLabel" class="dragLabel">
+                        <input type="checkbox" id="draggableBalloon">
+                        Draggable Balloon PNG
+                    </label>
+                    <label id="dragBaskLabel" class="dragLabel">
+                        <input type="checkbox" id="draggableBask">
+                        Draggable Basketball PNG
+                    </label>
+                </div>
+                <div id="textDiv">
+                    <div id="fontDiv" class=fontDiv>
+                        <select id="boxFontSelect" class="fontSelect">
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="'Brush Script MT', cursive">Brush Script</option>
+                            <option value="'Courier New', monospace">Courier New</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="'Lucida Console', monospace">Lucida Console</option>
+                            <option value="Tahoma, sans-serif">Tahoma</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                            <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                            <option value="cursive">Generic Cursive</option>
+                            <option value="monospace">Generic Monospace</option>
+                            <option value="sans-serif">Generic Sans Serif</option>
+                            <option value="serif">Generic Serif</option>
+                        </select>
+                        <p>Select ModBox Font</p>
+                    </div>
+                    <div id="fontStyleDiv" class="fontDiv">
+                        <select id="fontThicknessSelect" class="fontSelect">
+                            <option value="400" id="fourh">Normal</option>
+                            <option value="700" id="sevenh">Bold</option>
+                        </select>
+                        <p>Select ModBox Text Thickness</p>
+                    </div>
+                    <div id="fontSizeDiv" class="fontDiv">
+                        <input type="number" id="fontSizeInput" value="10">
+                        <p id="fontSizeP">Select ModBox Font Size (pt)</p>
+                    </div>
+                    <div id="fontLineDiv" class="fontDiv">
+                        <select id="fontLineSelect" class="fontSelect">
+                            <option value="line-through">Line Through</option>
+                            <option value="none">None</option>
+                            <option value="overline">Overline</option>
+                            <option value="underline">Underline</option>
+                        </select>
+                        <p>Select ModBox Line Type</p>
+                    </div>
+                    <div id="lineStyleDiv" class="fontDiv">
+                        <select id="lineStyleSelect" class="fontSelect">
+                            <option value="dashed">Dashed</option>
+                            <option value="double">Double</option>
+                            <option value="solid">Solid</option>
+                            <option value="wavy">Wavy</option>
+                        </select>
+                        <p>Select ModBox Line Style</p>
+                    </div>
+                </div>
+                <div id="previewFont">
+                    <h3>Font Preview:</h3>
+                    <h4 type="text" id="fontPreview">The quick brown fox jumps over the lazy dog</h4>
+                </div>
+                <label id="assignErrorLabel" class="dragLabel">
+                    <input type="checkbox" id="assignError">
+                    Don't ask again for small screen warning
+                </label>
+            </div>
+            <div id="dangerZone" class="settingsDiv">
+                <div id="divUsername">
+                    <select id="usernameSwitch">
+                        <option value="" id="diffUsername">Select a Different Username</option>
+                    </select>
+                    <button id="changetoUser" class="otherSettingsButton">Transfer to This Username</button>
+                </div>
+                <div id="trashUserDiv">
+                    <img src="images/trashcan.png" class="specialButton" id="deleteUser">
+                    <h5 id="deleteDisplay">Delete This User</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
